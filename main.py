@@ -1,20 +1,29 @@
 import os
+from random import randint
 
+os.system("cls")
 print("Seja bem vindo ao Jokenpô")
 print("Esse jogo exige que você escolha uma das opções abaixo")
-print("Pedra, papel ou tesoura.")
+print("Digite 1 - Para Opção Pedra")
+print("Digite 2 - Para Opção Papel")
+print("Digite 3 - Para Opção Tesoura")
 
-jogador1 = input("Digite sua opção ")
+opcaoEscolhida = input()
 
-os.system("cls")
+opcaoComputador = randint(1,3)
 
-print("Seja bem vindo ao Jokenpô")
-print("Digite a sua escolha Jogador 2")
-print("Pedra, papel ou tesoura.")
+print("Escolha jogador foi ", opcaoEscolhida)
+print("Escolha computador foi ", opcaoComputador)
 
-jogador2 = input("Digite sua opção")
+opcaoEscolhida = int(opcaoEscolhida)
 
-os.system("cls")
-
-print("O jogador 1 escolheu", jogador1, "e o jogador 2 escolheu", jogador2)
-
+# Ganho
+# 1 - 3; 2 - 1, 3 - 2 
+if (opcaoEscolhida == 1 and opcaoComputador == 3) or (opcaoEscolhida == 2 and opcaoComputador == 1) or (opcaoEscolhida == 3 and opcaoComputador == 2) :
+    print("Você ganhou")
+#Perdeu
+# 1 - 3; 2 - 1, 3 - 2 
+elif (opcaoEscolhida == 3 and opcaoComputador == 1) or (opcaoEscolhida == 1 and opcaoComputador == 2) or (opcaoEscolhida == 2 and opcaoComputador == 3) :
+    print("Você perdeu")
+else:
+    print("Você empatou")
